@@ -1,0 +1,19 @@
+{
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/api/Payment/InitPayment", //product microservice 
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7045
+        }
+      ],
+      "UpstreamPathTemplate": "/api/Payment/InitPayment", //Oceleot
+      "UpstreamHttpMethod": [ "Post" ]
+    }
+  ]
+}
+
+
+

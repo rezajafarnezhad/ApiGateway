@@ -1,0 +1,118 @@
+{
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/api/Product/GetAll", //product microservice 
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7006
+        }
+      ],
+      "UpstreamPathTemplate": "/api/Product/GetAll", //Oceleot
+      "UpstreamHttpMethod": [ "GET" ],
+      "RateLimitOptions": {
+        "ClientWhitelist": [], // array of strings
+        "EnableRateLimiting": true,
+        "Period": "5s", // seconds, minutes, hours, days
+        "PeriodTimespan": 10, // only seconds
+        "Limit": 1
+      },
+      "QoSOptions": { //polly
+        "ExceptionsAllowedBeforeBreaking": 3,
+        "DurationOfBreak": 15000,
+        "TimeoutValue": 5000
+      },
+      "FileCacheOptions": {
+        "TtlSeconds": 150,
+        "Region": "europe-central",
+        "Header": "OC-Caching-Control",
+        "EnableContentHashing": false // my route has GET verb only, assigning 'true' for requests with body: POST, PUT etc.
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/Panel/GetProductBy/{id}", //product microservice 
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7006
+        }
+      ],
+      "UpstreamPathTemplate": "/api/Panel/GetProductBy/{id}", //Oceleot
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Category/CreateCategory", //product microservice 
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7006
+        }
+      ],
+      "UpstreamPathTemplate": "/api/Category/CreateCategory", //Oceleot
+      "UpstreamHttpMethod": [ "Post" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Category/GetAll", //product microservice 
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7006
+        }
+      ],
+      "UpstreamPathTemplate": "/api/Category/GetAll", //Oceleot
+      "UpstreamHttpMethod": [ "Post" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Panel/CreateProduct", //product microservice 
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7006
+        }
+      ],
+      "UpstreamPathTemplate": "/api/Panel/CreateProduct", //Oceleot
+      "UpstreamHttpMethod": [ "Post" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Panel/UpdateProduct", //product microservice 
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7006
+        }
+      ],
+      "UpstreamPathTemplate": "/api/Panel/UpdateProduct", //Oceleot
+      "UpstreamHttpMethod": [ "Put" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Panel/GetAll", //product microservice 
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7006
+        }
+      ],
+      "UpstreamPathTemplate": "/api/Panel/GetAll", //Oceleot
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Product/GetProductBy/{id}", //product microservice 
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7006
+        }
+      ],
+      "UpstreamPathTemplate": "/api/Product/GetProductBy/{id}", //Oceleot
+      "UpstreamHttpMethod": [ "Get" ]
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/api/Basket/CreateOrGet?userId={userId}", //product microservice 
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7198
+        }
+      ],
+      "UpstreamPathTemplate": "/api/Basket/CreateOrGet?userId={userId}", //Oceleot
+      "UpstreamHttpMethod": [ "Post" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Basket/GetBasketForUser?userId={userId}", //product microservice 
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7198
+        }
+      ],
+      "UpstreamPathTemplate": "/api/Basket/GetBasketForUser?userId={userId}", //Oceleot
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Basket/AddItemToBasketUser", //product microservice 
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7198
+        }
+      ],
+      "UpstreamPathTemplate": "/api/Basket/AddItemToBasketUser", //Oceleot
+      "UpstreamHttpMethod": [ "Post" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Basket/RemoveItemToBasketUser/{basketId}/{itemId}", //product microservice 
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7198
+        }
+      ],
+      "UpstreamPathTemplate": "/api/Basket/RemoveItemToBasketUser/{basketId}/{itemId}", //Oceleot
+      "UpstreamHttpMethod": [ "Delete" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Basket/SetQuantityItemToBasketUser/{basketId}/{itemId}/{quantity}", //product microservice 
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7198
+        }
+      ],
+      "UpstreamPathTemplate": "/api/Basket/SetQuantityItemToBasketUser/{basketId}/{itemId}/{quantity}", //Oceleot
+      "UpstreamHttpMethod": [ "Post" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Basket/ApplyDiscountToBasket/{basketId}/{discountId}", //product microservice 
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7198
+        }
+      ],
+      "UpstreamPathTemplate": "/api/Basket/ApplyDiscountToBasket/{basketId}/{discountId}", //Oceleot
+      "UpstreamHttpMethod": [ "Put" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Basket/CheckOut", //product microservice 
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7198
+        }
+      ],
+      "UpstreamPathTemplate": "/api/Basket/CheckOut", //Oceleot
+      "UpstreamHttpMethod": [ "Post" ]
+    }
+  ]
+}
+
+
