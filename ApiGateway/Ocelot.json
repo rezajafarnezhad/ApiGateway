@@ -545,7 +545,7 @@
       "AddQueriesToRequest": {},
       "AuthenticationOptions": {
         "AllowedScopes": [],
-        "AuthenticationProviderKey": null,
+        "AuthenticationProviderKey": "ApiGateWayForWeb",
         "AuthenticationProviderKeys": []
       },
       "ChangeDownstreamPathTemplate": {},
@@ -622,7 +622,7 @@
       "AddQueriesToRequest": {},
       "AuthenticationOptions": {
         "AllowedScopes": [],
-        "AuthenticationProviderKey": null,
+        "AuthenticationProviderKey": "ApiGateWayForWeb",
         "AuthenticationProviderKeys": []
       },
       "ChangeDownstreamPathTemplate": {},
@@ -699,7 +699,7 @@
       "AddQueriesToRequest": {},
       "AuthenticationOptions": {
         "AllowedScopes": [],
-        "AuthenticationProviderKey": null,
+        "AuthenticationProviderKey": "ApiGateWayForWeb",
         "AuthenticationProviderKeys": []
       },
       "ChangeDownstreamPathTemplate": {},

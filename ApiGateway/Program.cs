@@ -1,11 +1,20 @@
 using ApiGateway.Model;
 using DiscountService.Proto;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Ocelot.Cache.CacheManager;
 using Ocelot.DependencyInjection;
 using Ocelot.Middleware;
 using Ocelot.Provider.Polly;
 
 var builder = WebApplication.CreateBuilder(args);
+
+var authenticationKey = "ApiGateWayForWeb";
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(authenticationKey, option =>
+{
+    option.Authority = "https://localhost:7032"; //Identity Server
+    option.Audience = "apigatewayforweb";
+});
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();

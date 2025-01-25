@@ -10,7 +10,10 @@
         }
       ],
       "UpstreamPathTemplate": "/api/Order/GetOrders/{userId}", //Oceleot
-      "UpstreamHttpMethod": [ "Get" ]
+      "UpstreamHttpMethod": [ "Get" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "ApiGateWayForWeb"
+      }
     },
     {
       "DownstreamPathTemplate": "/api/Order/GetOrder/{orderId}", //product microservice 
@@ -22,7 +25,10 @@
         }
       ],
       "UpstreamPathTemplate": "/api/Order/GetOrder/{orderId}", //Oceleot
-      "UpstreamHttpMethod": [ "GET" ]
+      "UpstreamHttpMethod": [ "GET" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "ApiGateWayForWeb"
+      }
     },
     {
       "DownstreamPathTemplate": "/api/Order/PaymentOrder/{orderId}", //product microservice 
@@ -34,7 +40,10 @@
         }
       ],
       "UpstreamPathTemplate": "/api/Order/PaymentOrder/{orderId}", //Oceleot
-      "UpstreamHttpMethod": [ "Get" ]
+      "UpstreamHttpMethod": [ "Get" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "ApiGateWayForWeb"
+      }
     }
   ]
 }
